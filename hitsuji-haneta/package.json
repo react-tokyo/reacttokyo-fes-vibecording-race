@@ -1,0 +1,5 @@
+{
+  "name": "x-platform",
+  "private": true,
+  "workspaces": ["shared", "backend", "frontend"]
+}
