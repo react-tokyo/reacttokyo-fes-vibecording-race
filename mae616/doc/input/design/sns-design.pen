@@ -1,0 +1,1238 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "clip": true,
+      "width": 800,
+      "height": 600,
+      "fill": "#FFFFFF",
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "u7XR0",
+      "x": 900,
+      "y": 0,
+      "name": "Timeline",
+      "width": 1440,
+      "height": 900,
+      "fill": "$bg-page",
+      "children": [
+        {
+          "id": "Yu1KJ",
+          "type": "ref",
+          "ref": "ManSV",
+          "name": "sidebar",
+          "height": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "vRC01",
+          "name": "main",
+          "clip": true,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "UZHQI",
+              "name": "header",
+              "width": "fill_container",
+              "fill": "#FFFFFFEE",
+              "stroke": {
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "$border-subtle"
+              },
+              "padding": [
+                12,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "2jfMk",
+                  "name": "title",
+                  "fill": "$text-primary",
+                  "content": "ホーム",
+                  "fontFamily": "Outfit",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Lj5ij",
+              "name": "compose",
+              "width": "fill_container",
+              "fill": "$bg-card",
+              "stroke": {
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "$border-subtle"
+              },
+              "gap": 12,
+              "padding": 16,
+              "children": [
+                {
+                  "id": "3lkvB",
+                  "type": "ref",
+                  "ref": "tEDjK",
+                  "name": "composeAvatar"
+                },
+                {
+                  "type": "frame",
+                  "id": "7phNZ",
+                  "name": "composeRight",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "puRun",
+                      "name": "inputArea",
+                      "width": "fill_container",
+                      "padding": [
+                        12,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "E7qBw",
+                          "name": "placeholder",
+                          "fill": "$text-tertiary",
+                          "content": "いまどうしてる？",
+                          "fontFamily": "Outfit",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "QeTjU",
+                      "type": "ref",
+                      "ref": "K9rYF",
+                      "name": "postBtn"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ntvxF",
+              "name": "feed",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "$bg-page",
+              "layout": "vertical",
+              "children": [
+                {
+                  "id": "PYmJj",
+                  "type": "ref",
+                  "ref": "uJFGU",
+                  "name": "post1",
+                  "width": "fill_container",
+                  "descendants": {
+                    "pIaLA": {
+                      "content": "佐藤花子"
+                    },
+                    "9f047": {
+                      "content": "@sato"
+                    },
+                    "9Iucb": {
+                      "content": "1時間前"
+                    },
+                    "EbDQO": {
+                      "content": "今日はReact Tokyo Fesに参加してきました！とても楽しかったです。みなさんの発表が素晴らしかった。"
+                    }
+                  }
+                },
+                {
+                  "id": "mkqCb",
+                  "type": "ref",
+                  "ref": "uJFGU",
+                  "name": "post2",
+                  "width": "fill_container",
+                  "descendants": {
+                    "pIaLA": {
+                      "content": "鈴木一郎"
+                    },
+                    "9f047": {
+                      "content": "@suzuki"
+                    },
+                    "9Iucb": {
+                      "content": "3時間前"
+                    },
+                    "EbDQO": {
+                      "content": "新しいプロジェクトを始めました。TypeScript + React + Viteの組み合わせが最高です！"
+                    }
+                  }
+                },
+                {
+                  "id": "fN0kL",
+                  "type": "ref",
+                  "ref": "uJFGU",
+                  "name": "post3",
+                  "width": "fill_container",
+                  "descendants": {
+                    "pIaLA": {
+                      "content": "山田美咲"
+                    },
+                    "9f047": {
+                      "content": "@yamada"
+                    },
+                    "9Iucb": {
+                      "content": "5時間前"
+                    },
+                    "EbDQO": {
+                      "content": "カフェでコーディング中。集中できて最高の環境です。"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "VuC07",
+      "x": 2440,
+      "y": 0,
+      "name": "Users",
+      "width": 1440,
+      "height": 900,
+      "fill": "$bg-page",
+      "children": [
+        {
+          "id": "Uk86m",
+          "type": "ref",
+          "ref": "ManSV",
+          "name": "sidebar",
+          "height": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "HMKjl",
+          "name": "main",
+          "clip": true,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ZbluI",
+              "name": "header",
+              "width": "fill_container",
+              "fill": "#FFFFFFEE",
+              "stroke": {
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "$border-subtle"
+              },
+              "padding": [
+                12,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "8ANEs",
+                  "name": "title",
+                  "fill": "$text-primary",
+                  "content": "ユーザー",
+                  "fontFamily": "Outfit",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "RJrdI",
+              "name": "userList",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "$bg-page",
+              "layout": "vertical",
+              "children": [
+                {
+                  "id": "MJYsO",
+                  "type": "ref",
+                  "ref": "f7Qwd",
+                  "name": "userSelf",
+                  "width": "fill_container",
+                  "descendants": {
+                    "oPdER": {
+                      "content": "田中太郎"
+                    },
+                    "E2y8p": {
+                      "content": "@tanaka"
+                    },
+                    "KCnJD": {
+                      "enabled": false
+                    }
+                  }
+                },
+                {
+                  "id": "Mrjsf",
+                  "type": "ref",
+                  "ref": "f7Qwd",
+                  "name": "user1",
+                  "width": "fill_container",
+                  "descendants": {
+                    "oPdER": {
+                      "content": "佐藤花子"
+                    },
+                    "E2y8p": {
+                      "content": "@sato"
+                    }
+                  }
+                },
+                {
+                  "id": "AoY8E",
+                  "type": "ref",
+                  "ref": "f7Qwd",
+                  "name": "user2",
+                  "width": "fill_container",
+                  "descendants": {
+                    "oPdER": {
+                      "content": "鈴木一郎"
+                    },
+                    "E2y8p": {
+                      "content": "@suzuki"
+                    }
+                  }
+                },
+                {
+                  "id": "MIjaR",
+                  "type": "ref",
+                  "ref": "f7Qwd",
+                  "name": "user3",
+                  "width": "fill_container",
+                  "descendants": {
+                    "oPdER": {
+                      "content": "山田美咲"
+                    },
+                    "E2y8p": {
+                      "content": "@yamada"
+                    },
+                    "KCnJD": {
+                      "fill": "$white",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$border-strong"
+                      }
+                    },
+                    "KCnJD/m6Rnf": {
+                      "content": "フォロー中",
+                      "fill": "$text-primary"
+                    }
+                  }
+                },
+                {
+                  "id": "FEVPs",
+                  "type": "ref",
+                  "ref": "f7Qwd",
+                  "name": "user4",
+                  "width": "fill_container",
+                  "descendants": {
+                    "oPdER": {
+                      "content": "高橋健太"
+                    },
+                    "E2y8p": {
+                      "content": "@takahashi"
+                    }
+                  }
+                },
+                {
+                  "id": "Bsl0r",
+                  "type": "ref",
+                  "ref": "f7Qwd",
+                  "name": "user5",
+                  "width": "fill_container",
+                  "descendants": {
+                    "oPdER": {
+                      "content": "伊藤さくら"
+                    },
+                    "E2y8p": {
+                      "content": "@ito"
+                    },
+                    "KCnJD": {
+                      "fill": "$white",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$border-strong"
+                      }
+                    },
+                    "KCnJD/m6Rnf": {
+                      "content": "フォロー中",
+                      "fill": "$text-primary"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "xTzqK",
+      "x": 3980,
+      "y": 0,
+      "name": "Profile",
+      "width": 1440,
+      "height": 900,
+      "fill": "$bg-page",
+      "children": [
+        {
+          "id": "Q1BBo",
+          "type": "ref",
+          "ref": "ManSV",
+          "name": "sidebar",
+          "height": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "UmgYb",
+          "name": "main",
+          "clip": true,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "h62Eq",
+              "name": "header",
+              "width": "fill_container",
+              "fill": "#FFFFFFEE",
+              "stroke": {
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "$border-subtle"
+              },
+              "padding": [
+                12,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "w2nbq",
+                  "name": "title",
+                  "fill": "$text-primary",
+                  "content": "プロフィール",
+                  "fontFamily": "Outfit",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "P5RZG",
+              "name": "profileSection",
+              "width": "fill_container",
+              "fill": "$bg-card",
+              "stroke": {
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "$border-subtle"
+              },
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "o8fEy",
+                  "name": "profileTop",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "LRVBA",
+                      "name": "bigAvatar",
+                      "width": 72,
+                      "height": 72,
+                      "fill": "$accent-blue-light",
+                      "cornerRadius": "$radius-full",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "L79EV",
+                          "name": "prAvatarIcon",
+                          "width": 36,
+                          "height": 36,
+                          "iconFontName": "user",
+                          "iconFontFamily": "lucide",
+                          "fill": "$accent-blue"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "aH8DF",
+                      "type": "ref",
+                      "ref": "xu9A6",
+                      "name": "followBtn"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "MGT1T",
+                  "name": "nameArea",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ee6Yg",
+                      "name": "name",
+                      "fill": "$text-primary",
+                      "content": "佐藤花子",
+                      "fontFamily": "Outfit",
+                      "fontSize": 22,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "msj8A",
+                      "name": "handle",
+                      "fill": "$text-tertiary",
+                      "content": "@sato",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "zxbGj",
+                  "name": "stats",
+                  "width": "fill_container",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "F8myZ",
+                      "name": "following",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "of52F",
+                          "name": "count",
+                          "fill": "$text-primary",
+                          "content": "12",
+                          "fontFamily": "Outfit",
+                          "fontSize": 15,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "lwq2i",
+                          "name": "label",
+                          "fill": "$text-secondary",
+                          "content": "フォロー中",
+                          "fontFamily": "Outfit",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Udbuh",
+                      "name": "followers",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "hcXVa",
+                          "name": "count",
+                          "fill": "$text-primary",
+                          "content": "8",
+                          "fontFamily": "Outfit",
+                          "fontSize": 15,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "5cpHH",
+                          "name": "label",
+                          "fill": "$text-secondary",
+                          "content": "フォロワー",
+                          "fontFamily": "Outfit",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FyHzs",
+              "name": "tabs",
+              "width": "fill_container",
+              "fill": "$bg-card",
+              "stroke": {
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "$border-subtle"
+              },
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "4eGrh",
+                  "name": "tabItem",
+                  "stroke": {
+                    "thickness": {
+                      "bottom": 3
+                    },
+                    "fill": "$accent-blue"
+                  },
+                  "layout": "vertical",
+                  "padding": [
+                    16,
+                    24
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "6rER8",
+                      "name": "label",
+                      "fill": "$text-primary",
+                      "content": "投稿",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "7fi2e",
+              "name": "posts",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "$bg-page",
+              "layout": "vertical",
+              "children": [
+                {
+                  "id": "6xcgZ",
+                  "type": "ref",
+                  "ref": "uJFGU",
+                  "name": "profilePost1",
+                  "width": "fill_container",
+                  "descendants": {
+                    "pIaLA": {
+                      "content": "佐藤花子"
+                    },
+                    "9f047": {
+                      "content": "@sato"
+                    },
+                    "9Iucb": {
+                      "content": "1時間前"
+                    },
+                    "EbDQO": {
+                      "content": "今日はReact Tokyo Fesに参加してきました！とても楽しかったです。みなさんの発表が素晴らしかった。"
+                    }
+                  }
+                },
+                {
+                  "id": "fa2Y8",
+                  "type": "ref",
+                  "ref": "uJFGU",
+                  "name": "profilePost2",
+                  "width": "fill_container",
+                  "descendants": {
+                    "pIaLA": {
+                      "content": "佐藤花子"
+                    },
+                    "9f047": {
+                      "content": "@sato"
+                    },
+                    "9Iucb": {
+                      "content": "昨日"
+                    },
+                    "EbDQO": {
+                      "content": "週末はゆっくり読書する予定です。おすすめの技術書があれば教えてください！"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "xu9A6",
+      "x": 0,
+      "y": 1100,
+      "name": "Button/Primary",
+      "reusable": true,
+      "fill": "$accent-blue",
+      "cornerRadius": "$radius-full",
+      "padding": [
+        10,
+        24
+      ],
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "m6Rnf",
+          "name": "label",
+          "fill": "$white",
+          "content": "フォロー",
+          "fontFamily": "$font-family",
+          "fontSize": 14,
+          "fontWeight": "600"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "K7iBA",
+      "x": 200,
+      "y": 1100,
+      "name": "Button/Outline",
+      "reusable": true,
+      "fill": "$white",
+      "cornerRadius": "$radius-full",
+      "stroke": {
+        "thickness": 1,
+        "fill": "$border-strong"
+      },
+      "padding": [
+        10,
+        24
+      ],
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "hO5ze",
+          "name": "label",
+          "fill": "$text-primary",
+          "content": "フォロー中",
+          "fontFamily": "$font-family",
+          "fontSize": 14,
+          "fontWeight": "600"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "K9rYF",
+      "x": 400,
+      "y": 1100,
+      "name": "Button/Post",
+      "reusable": true,
+      "fill": "$accent-blue",
+      "cornerRadius": "$radius-full",
+      "padding": [
+        12,
+        32
+      ],
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "iOJ0J",
+          "name": "label",
+          "fill": "$white",
+          "content": "投稿する",
+          "fontFamily": "$font-family",
+          "fontSize": 16,
+          "fontWeight": "700"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "svOZx",
+      "x": 0,
+      "y": 1200,
+      "name": "Avatar",
+      "reusable": true,
+      "width": 48,
+      "height": 48,
+      "fill": "$accent-blue-light",
+      "cornerRadius": "$radius-full",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "icon_font",
+          "id": "hbdGt",
+          "name": "icon",
+          "width": 24,
+          "height": 24,
+          "iconFontName": "user",
+          "iconFontFamily": "lucide",
+          "fill": "$accent-blue"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "tEDjK",
+      "x": 80,
+      "y": 1200,
+      "name": "Avatar/Small",
+      "reusable": true,
+      "width": 40,
+      "height": 40,
+      "fill": "$accent-blue-light",
+      "cornerRadius": "$radius-full",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "icon_font",
+          "id": "2XThC",
+          "name": "icon",
+          "width": 20,
+          "height": 20,
+          "iconFontName": "user",
+          "iconFontFamily": "lucide",
+          "fill": "$accent-blue"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "aiWgh",
+      "x": 0,
+      "y": 1300,
+      "name": "NavItem",
+      "reusable": true,
+      "cornerRadius": "$radius-full",
+      "gap": 16,
+      "padding": [
+        12,
+        16
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "icon_font",
+          "id": "zG1si",
+          "name": "icon",
+          "width": 24,
+          "height": 24,
+          "iconFontName": "home",
+          "iconFontFamily": "lucide",
+          "fill": "$text-primary"
+        },
+        {
+          "type": "text",
+          "id": "IWUDO",
+          "name": "label",
+          "fill": "$text-primary",
+          "content": "ホーム",
+          "fontFamily": "Outfit",
+          "fontSize": 18,
+          "fontWeight": "500"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "uJFGU",
+      "x": 0,
+      "y": 1400,
+      "name": "PostCard",
+      "reusable": true,
+      "width": 600,
+      "fill": "$bg-card",
+      "stroke": {
+        "align": "inside",
+        "thickness": 1,
+        "fill": "$border-subtle"
+      },
+      "gap": 12,
+      "padding": 16,
+      "children": [
+        {
+          "id": "KFFWA",
+          "type": "ref",
+          "ref": "tEDjK",
+          "name": "avatar"
+        },
+        {
+          "type": "frame",
+          "id": "zy3gZ",
+          "name": "content",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 4,
+          "children": [
+            {
+              "type": "frame",
+              "id": "BMvD3",
+              "name": "header",
+              "width": "fill_container",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "pIaLA",
+                  "name": "displayName",
+                  "fill": "$text-primary",
+                  "content": "ユーザー名",
+                  "fontFamily": "Outfit",
+                  "fontSize": 15,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "9f047",
+                  "name": "handle",
+                  "fill": "$text-tertiary",
+                  "content": "@username",
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "9Iucb",
+                  "name": "time",
+                  "fill": "$text-tertiary",
+                  "content": "2h",
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "EbDQO",
+              "name": "body",
+              "fill": "$text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "投稿の本文がここに表示されます。SNSの投稿内容のサンプルテキストです。",
+              "lineHeight": 1.5,
+              "fontFamily": "Outfit",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "f7Qwd",
+      "x": 700,
+      "y": 1400,
+      "name": "UserCard",
+      "reusable": true,
+      "width": 600,
+      "fill": "$bg-card",
+      "stroke": {
+        "align": "inside",
+        "thickness": 1,
+        "fill": "$border-subtle"
+      },
+      "gap": 12,
+      "padding": 16,
+      "alignItems": "center",
+      "children": [
+        {
+          "id": "aol5A",
+          "type": "ref",
+          "ref": "svOZx",
+          "name": "avatar"
+        },
+        {
+          "type": "frame",
+          "id": "uqW1j",
+          "name": "info",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 2,
+          "children": [
+            {
+              "type": "text",
+              "id": "oPdER",
+              "name": "displayName",
+              "fill": "$text-primary",
+              "content": "ユーザー名",
+              "fontFamily": "Outfit",
+              "fontSize": 15,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "E2y8p",
+              "name": "handle",
+              "fill": "$text-tertiary",
+              "content": "@username",
+              "fontFamily": "Outfit",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "id": "KCnJD",
+          "type": "ref",
+          "ref": "xu9A6",
+          "name": "followBtn"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ManSV",
+      "x": 0,
+      "y": 1600,
+      "name": "Sidebar",
+      "reusable": true,
+      "width": 280,
+      "height": "fill_container(900)",
+      "fill": "$bg-card",
+      "stroke": {
+        "thickness": {
+          "right": 1
+        },
+        "fill": "$border-subtle"
+      },
+      "layout": "vertical",
+      "padding": [
+        20,
+        16
+      ],
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "frame",
+          "id": "rXoF1",
+          "name": "top",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 8,
+          "children": [
+            {
+              "type": "text",
+              "id": "QbNai",
+              "name": "logo",
+              "fill": "$accent-blue",
+              "content": "つぶやき",
+              "fontFamily": "Outfit",
+              "fontSize": 26,
+              "fontWeight": "700"
+            },
+            {
+              "id": "L0nlG",
+              "type": "ref",
+              "ref": "aiWgh",
+              "name": "navHome"
+            },
+            {
+              "id": "3IsHN",
+              "type": "ref",
+              "ref": "aiWgh",
+              "name": "navUsers",
+              "descendants": {
+                "zG1si": {
+                  "iconFontName": "users"
+                },
+                "IWUDO": {
+                  "content": "ユーザー"
+                }
+              }
+            },
+            {
+              "id": "zIaKH",
+              "type": "ref",
+              "ref": "aiWgh",
+              "name": "navProfile",
+              "descendants": {
+                "zG1si": {
+                  "iconFontName": "user"
+                },
+                "IWUDO": {
+                  "content": "プロフィール"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "QfXhj",
+          "name": "bottom",
+          "width": "fill_container",
+          "gap": 12,
+          "padding": [
+            12,
+            8
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "Dq7mZ",
+              "type": "ref",
+              "ref": "tEDjK",
+              "name": "myAvatar"
+            },
+            {
+              "type": "frame",
+              "id": "yvM0y",
+              "name": "myInfo",
+              "width": "fill_container",
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "z2lCe",
+                  "name": "myName",
+                  "fill": "$text-primary",
+                  "content": "田中太郎",
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "b8dcH",
+                  "name": "myHandle",
+                  "fill": "$text-tertiary",
+                  "content": "@tanaka",
+                  "fontFamily": "Outfit",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "accent-blue": {
+      "type": "color",
+      "value": "#1D9BF0"
+    },
+    "accent-blue-light": {
+      "type": "color",
+      "value": "#E8F5FD"
+    },
+    "accent-red": {
+      "type": "color",
+      "value": "#F4212E"
+    },
+    "bg-card": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "bg-hover": {
+      "type": "color",
+      "value": "#F7F7F7"
+    },
+    "bg-page": {
+      "type": "color",
+      "value": "#F5F4F1"
+    },
+    "bg-sidebar": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "border-strong": {
+      "type": "color",
+      "value": "#D1D0CD"
+    },
+    "border-subtle": {
+      "type": "color",
+      "value": "#E5E4E1"
+    },
+    "font-family": {
+      "type": "string",
+      "value": "Outfit"
+    },
+    "radius-full": {
+      "type": "number",
+      "value": 100
+    },
+    "radius-lg": {
+      "type": "number",
+      "value": 16
+    },
+    "radius-md": {
+      "type": "number",
+      "value": 12
+    },
+    "radius-sm": {
+      "type": "number",
+      "value": 8
+    },
+    "text-primary": {
+      "type": "color",
+      "value": "#1A1918"
+    },
+    "text-secondary": {
+      "type": "color",
+      "value": "#6D6C6A"
+    },
+    "text-tertiary": {
+      "type": "color",
+      "value": "#9C9B99"
+    },
+    "white": {
+      "type": "color",
+      "value": "#FFFFFF"
+    }
+  }
+}
