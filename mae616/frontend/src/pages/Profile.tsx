@@ -87,8 +87,7 @@ export default function Profile() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           followerId: VIEWER_ID,
-          followingId: user.id,
-          action: prev ? 'unfollow' : 'follow',
+          followeeId: user.id,
         }),
       })
       if (!res.ok) throw new Error('フォロー操作に失敗')

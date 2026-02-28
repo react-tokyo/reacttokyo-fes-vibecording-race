@@ -68,8 +68,7 @@ export default function Users() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           followerId: VIEWER_ID,
-          followingId: targetId,
-          action: currentlyFollowing ? 'unfollow' : 'follow',
+          followeeId: targetId,
         }),
       })
       if (!res.ok) throw new Error('フォロー操作に失敗')
