@@ -1,0 +1,291 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  background: #f5f8fa;
+  color: #14171a;
+}
+
+a {
+  color: #1da1f2;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: white;
+  border-bottom: 1px solid #e1e8ed;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #14171a;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+.user-switcher select {
+  padding: 8px 12px;
+  border: 1px solid #e1e8ed;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.main {
+  padding: 24px;
+}
+
+/* Home Page */
+.home {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+}
+
+.timeline-section h2,
+.sidebar h2 {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+/* Post Form */
+.post-form {
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.post-form textarea {
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+}
+
+.post-form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e1e8ed;
+}
+
+.char-count {
+  color: #657786;
+  font-size: 14px;
+}
+
+.post-form button {
+  background: #1da1f2;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.post-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.post-form button:hover:not(:disabled) {
+  background: #1a91da;
+}
+
+.error-text {
+  color: #e0245e;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+/* Post Item */
+.post-item {
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 8px;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.username {
+  color: #657786;
+  font-size: 14px;
+}
+
+.post-time {
+  color: #657786;
+  font-size: 12px;
+}
+
+.post-content {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* User Card */
+.user-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.follow-btn {
+  background: #14171a;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.follow-btn:hover {
+  opacity: 0.85;
+}
+
+.follow-btn.following {
+  background: white;
+  color: #14171a;
+  border: 1px solid #e1e8ed;
+}
+
+.follow-btn.following:hover {
+  border-color: #e0245e;
+  color: #e0245e;
+}
+
+/* Profile Page */
+.profile {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.profile-header {
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.profile-info h1 {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.profile-info .username {
+  font-size: 15px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.bio {
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e1e8ed;
+}
+
+.profile-stats span {
+  color: #657786;
+  font-size: 14px;
+}
+
+.profile-header .follow-btn {
+  margin-top: 16px;
+}
+
+.profile-posts h2 {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+/* Utility */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #657786;
+}
+
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: #657786;
+  font-size: 14px;
+}
+
+.error {
+  text-align: center;
+  padding: 40px;
+  color: #e0245e;
+}
