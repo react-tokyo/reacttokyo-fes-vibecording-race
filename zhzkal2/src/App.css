@@ -1,0 +1,969 @@
+/* ============================
+   X (Twitter) Clone - X 클론
+   React 18 + TypeScript + Vite
+   ============================ */
+
+:root {
+  --bg: #000000;
+  --bg-secondary: #16181c;
+  --bg-hover: #080808;
+  --border: #2f3336;
+  --text-primary: #e7e9ea;
+  --text-secondary: #71767b;
+  --accent: #1d9bf0;
+  --accent-hover: #1a8cd8;
+  --like: #f91880;
+  --retweet: #00ba7c;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 15px;
+}
+
+/* ====== 레이아웃 ====== */
+.app {
+  display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+/* ====== 좌측 사이드바 ====== */
+.sidebar {
+  width: 275px;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-logo {
+  font-size: 28px;
+  font-weight: 900;
+  padding: 12px 16px;
+  cursor: pointer;
+  width: fit-content;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.sidebar-logo:hover {
+  background: var(--bg-secondary);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 16px;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+  text-align: left;
+}
+
+.nav-item:hover {
+  background: var(--bg-secondary);
+}
+
+.nav-item.active {
+  font-weight: 700;
+}
+
+.nav-icon {
+  font-size: 24px;
+  width: 26px;
+  text-align: center;
+}
+
+.nav-label {
+  font-size: 20px;
+}
+
+.post-button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 16px 32px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 90%;
+  margin-bottom: 8px;
+}
+
+.post-button:hover {
+  background: var(--accent-hover);
+}
+
+.profile-mini {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 9999px;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: 16px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  width: 100%;
+  text-align: left;
+}
+
+.profile-mini-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.profile-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.profile-handle {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.more-icon {
+  color: var(--text-secondary);
+  font-size: 18px;
+}
+
+/* ====== 피드 ====== */
+.feed {
+  flex: 1;
+  min-width: 0;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  max-width: 600px;
+}
+
+.feed-header {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+
+.feed-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ====== 포스트 작성 ====== */
+.composer {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.composer-inner {
+  display: flex;
+  gap: 12px;
+}
+
+.composer-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.composer-textarea {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 20px;
+  resize: none;
+  outline: none;
+  width: 100%;
+  font-family: var(--font);
+  padding: 8px 0;
+  min-height: 80px;
+}
+
+.composer-textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.composer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+.composer-tools {
+  display: flex;
+  gap: 4px;
+}
+
+.tool-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 16px;
+  color: var(--accent);
+  transition: background 0.2s;
+}
+
+.tool-btn:hover {
+  background: rgba(29, 155, 240, 0.1);
+}
+
+.composer-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.char-count {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.char-count.near-limit {
+  color: #ffd400;
+}
+
+.char-count.over-limit {
+  color: var(--like);
+}
+
+.submit-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 8px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ====== 포스트 카드 ====== */
+.posts-list {
+  transition: opacity 0.15s;
+}
+
+.posts-list.pending {
+  opacity: 0.7;
+}
+
+.post-card {
+  display: flex;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.post-card:hover {
+  background: var(--bg-hover);
+}
+
+.post-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.post-author-name {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.post-author-handle,
+.post-dot,
+.post-time {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.post-content {
+  line-height: 1.5;
+  margin-bottom: 12px;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.post-actions {
+  display: flex;
+  gap: 4px;
+  max-width: 425px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 9999px;
+  font-size: 13px;
+  transition: color 0.2s, background 0.2s;
+  flex: 1;
+}
+
+.action-btn:hover {
+  background: rgba(29, 155, 240, 0.1);
+  color: var(--accent);
+}
+
+.like-btn:hover {
+  background: rgba(249, 24, 128, 0.1);
+  color: var(--like);
+}
+
+.like-btn.active {
+  color: var(--like);
+}
+
+.retweet-btn:hover {
+  background: rgba(0, 186, 124, 0.1);
+  color: var(--retweet);
+}
+
+.retweet-btn.active {
+  color: var(--retweet);
+}
+
+.bookmark-btn.active {
+  color: var(--accent);
+}
+
+.action-count {
+  font-size: 13px;
+}
+
+/* ====== 아바타 ====== */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.avatar.large {
+  width: 44px;
+  height: 44px;
+  font-size: 24px;
+}
+
+/* ====== 인증 배지 ====== */
+.verified {
+  color: var(--accent);
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+/* ====== 우측 사이드바 ====== */
+.trending-sidebar {
+  width: 350px;
+  padding: 0 16px;
+  flex-shrink: 0;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-secondary);
+  border-radius: 9999px;
+  padding: 12px 20px;
+  margin: 12px 0;
+  border: 1px solid transparent;
+  transition: border 0.2s;
+}
+
+.search-box:focus-within {
+  border-color: var(--accent);
+  background: var(--bg);
+}
+
+.search-icon {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 15px;
+  width: 100%;
+}
+
+.trending-card {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.trending-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.trend-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.trend-item:last-child {
+  border-bottom: none;
+}
+
+.trend-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.trend-category {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.trend-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 2px 0;
+}
+
+.trend-count {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.show-more-btn {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-size: 15px;
+  cursor: pointer;
+  padding: 12px 0;
+  width: 100%;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.show-more-btn:hover {
+  background: rgba(29, 155, 240, 0.05);
+}
+
+.suggested-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.suggested-user-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.suggested-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.suggested-handle {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.follow-btn {
+  background: var(--text-primary);
+  color: var(--bg);
+  border: none;
+  border-radius: 9999px;
+  padding: 6px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.follow-btn:hover {
+  opacity: 0.9;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 16px 0;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ====== 빈 상태 ====== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  color: var(--text-secondary);
+  gap: 16px;
+}
+
+.empty-icon {
+  font-size: 48px;
+}
+
+/* ====== 기술 페이지 ====== */
+.skills-container {
+  padding: 20px;
+}
+
+.skills-hero {
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+
+.skills-hero-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.skills-hero h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.skills-hero p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.skills-badges {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.badge.react { background: rgba(97, 218, 251, 0.2); color: #61dafb; }
+.badge.ts { background: rgba(49, 120, 198, 0.2); color: #3178c6; }
+.badge.vite { background: rgba(189, 52, 254, 0.2); color: #bd34fe; }
+
+.skills-section {
+  margin-bottom: 32px;
+}
+
+.skills-category-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid currentColor;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.skill-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.skill-icon {
+  font-size: 28px;
+}
+
+.skill-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.skill-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.skill-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.skills-footer {
+  text-align: center;
+  padding: 32px 20px;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  margin-top: 32px;
+  line-height: 2;
+  font-size: 15px;
+}
+
+/* ====== 유저 목록 페이지 ====== */
+.users-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-row {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+  transition: background 0.15s;
+}
+
+.user-row:hover {
+  background: var(--bg-hover);
+}
+
+.user-row-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+}
+
+.user-row-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-row-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.user-row-handle {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.user-row-bio {
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+
+.user-row-stats {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* ====== 팔로우 버튼 상태 ====== */
+.follow-btn.following {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.follow-btn.following:hover {
+  background: rgba(249, 24, 128, 0.1);
+  color: var(--like);
+  border-color: var(--like);
+}
+
+/* ====== 포스트 카드 - 유저 클릭 버튼 ====== */
+.post-avatar-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.post-author-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
+}
+
+.post-author-btn:hover .post-author-name {
+  text-decoration: underline;
+}
+
+/* ====== 프로필 페이지 ====== */
+.profile-feed-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-header-name {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.profile-header-count {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.profile-banner {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #1d9bf0 0%, #0d47a1 100%);
+  flex-shrink: 0;
+}
+
+.profile-avatar-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px 16px 0;
+  margin-top: -48px;
+}
+
+.profile-avatar-xl {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 4px solid var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  flex-shrink: 0;
+}
+
+.profile-info {
+  padding: 12px 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  margin-top: 12px;
+}
+
+.profile-tab {
+  flex: 1;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.profile-tab:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.profile-tab.active {
+  font-weight: 700;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--accent);
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 15px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.back-btn:hover {
+  background: var(--bg-secondary);
+}
+
+.profile-display-name {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.profile-handle-text {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin: 2px 0 0;
+}
+
+.profile-bio-text {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin: 8px 0 0;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+.profile-stats strong {
+  color: var(--text-primary);
+}
+
+/* ====== 로딩 / 에러 상태 ====== */
+.loading-state {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+}
+
+.error-state {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  color: var(--like);
+  font-size: 14px;
+}
+
+.empty-sub {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
